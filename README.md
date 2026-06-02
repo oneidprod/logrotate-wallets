@@ -16,7 +16,11 @@ No daemon restarts required. Works across any number of wallets and users with a
 
 ```bash
 sudo cp wallet-debug-logrotate.conf /etc/logrotate.d/wallet-debug
+sudo chown root:root /etc/logrotate.d/wallet-debug
+sudo chmod 644 /etc/logrotate.d/wallet-debug
 ```
+
+Logrotate requires the config file to be owned by root and not group-writable -- skipping these steps will cause it to silently ignore the config.
 
 Logrotate runs daily automatically via `/etc/cron.daily/logrotate` or `systemd logrotate.timer`. No cron job needed.
 
