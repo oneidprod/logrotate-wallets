@@ -74,3 +74,6 @@ If this saves your disks, tips are appreciated:
 | SOL | `up9YvW6ewNati5fmmDjGHzFbq8UkSbHPccoDNzijk3G` |
 | POL | `0x5198f52fA768294ae66f0cB75A98DCc895a36F2E` |
 | DOGE | `DJAg2fTzS5vN3yXDPn5gGPz9JSmzJn3cXD` |
+
+## License
+MIT © oneidprod
