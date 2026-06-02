@@ -50,6 +50,17 @@ After changing the config, test with a dry run before deploying:
 sudo logrotate -d /etc/logrotate.d/wallet-debug
 ```
 
+## Deploying to multiple servers
+
+If you manage multiple VPS servers, [pssh4cssh](https://github.com/oneidprod/pssh4cssh) pairs well with this -- it lets you deploy to all your servers in one command using ClusterSSH-style group definitions.
+
+You don't need ClusterSSH installed. Just create `~/.clusterssh/clusters` with your host groups and pssh4cssh will read it directly.
+
+```bash
+pscp-c vps-all wallet-debug-logrotate.conf /home/ubuntu/
+pssh-c vps-all "sudo mv ~/wallet-debug-logrotate.conf /etc/logrotate.d/wallet-debug && sudo chown root:root /etc/logrotate.d/wallet-debug && sudo chmod 644 /etc/logrotate.d/wallet-debug"
+```
+
 See [wallet-debug-logrotate.md](wallet-debug-logrotate.md) for full details on config options and archived log naming.
 
 ## Donate
